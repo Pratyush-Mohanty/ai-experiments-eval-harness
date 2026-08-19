@@ -1,0 +1,17 @@
+[
+  {
+    "question": "What is an LSM-tree?",
+    "answer": "A write-optimized storage structure that appends writes to a memtable and compacts them into sorted runs.",
+    "context": "LSM-trees are write-optimized data structures used by databases like Bigtable and Cassandra. They buffer writes in memory and flush sorted runs to disk, later merging them via compaction."
+  },
+  {
+    "question": "What does a B-tree optimize for?",
+    "answer": "Point and range reads.",
+    "context": "B-trees update data in place and are read-optimized, supporting efficient point and range queries at the cost of slower random writes."
+  },
+  {
+    "question": "What is the CAP theorem?",
+    "answer": "A distributed system can only guarantee two of consistency, availability, and partition tolerance under a network partition.",
+    "context": "Under a network partition, distributed systems must choose between consistency and availability; partition tolerance is mandatory in real distributed systems."
+  }
+]
