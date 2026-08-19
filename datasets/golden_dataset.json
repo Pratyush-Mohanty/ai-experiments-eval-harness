@@ -1,0 +1,38 @@
+[
+  {
+    "question": "What is an LSM-tree?",
+    "answer": "A write-optimized storage structure that appends writes to a memtable and compacts them into sorted runs.",
+    "context": "LSM-trees are write-optimized data structures used by databases like Bigtable and Cassandra. They buffer writes in memory and flush sorted runs to disk, later merging them via compaction.",
+    "tags": ["storage", "lsm-tree"]
+  },
+  {
+    "question": "What is a memtable in an LSM-tree?",
+    "answer": "The in-memory buffer where new writes are appended before they are flushed to disk as sorted runs.",
+    "context": "In an LSM-tree, writes land in an in-memory buffer called the memtable. When the memtable grows large enough it is flushed to disk as a sorted run.",
+    "tags": ["storage", "lsm-tree"]
+  },
+  {
+    "question": "What is compaction in an LSM-tree?",
+    "answer": "The background process that merges overlapping sorted runs into larger, non-overlapping ones to reclaim space and keep reads fast.",
+    "context": "Compaction merges overlapping sorted runs into larger runs, removing stale entries and reclaiming space. It trades write amplification for read performance.",
+    "tags": ["storage", "lsm-tree"]
+  },
+  {
+    "question": "What does a B-tree optimize for?",
+    "answer": "Point and range reads.",
+    "context": "B-trees update data in place and are read-optimized, supporting efficient point and range queries at the cost of slower random writes.",
+    "tags": ["storage", "b-tree"]
+  },
+  {
+    "question": "How does a B-tree handle writes compared to an LSM-tree?",
+    "answer": "A B-tree updates pages in place, so writes are random; an LSM-tree appends writes to a memtable and flushes them sequentially.",
+    "context": "B-trees perform in-place updates of existing pages, which makes random writes costly. LSM-trees instead buffer writes in a memtable and flush them sequentially to disk.",
+    "tags": ["storage", "b-tree", "lsm-tree"]
+  },
+  {
+    "question": "What is the CAP theorem?",
+    "answer": "A distributed system can only guarantee two of consistency, availability, and partition tolerance under a network partition.",
+    "context": "Under a network partition, distributed systems must choose between consistency and availability; partition tolerance is mandatory in real distributed systems.",
+    "tags": ["distributed-systems", "cap"]
+  }
+]
